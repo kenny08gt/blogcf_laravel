@@ -1,0 +1,9 @@
+para crear migraciones
+php artisan <- muestra todos los comandos
+php artisan make:migration --help <- muestra como seguir
+
+php artisan make:migration nombre_migracion --create=nombre_tabla_plural
+
+despues para crear las tablas
+
+php artisan migrate
