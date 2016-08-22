@@ -7,3 +7,12 @@ php artisan make:migration nombre_migracion --create=nombre_tabla_plural
 despues para crear las tablas
 
 php artisan migrate
+
+
+Para crear una muchos a muchos se ccrear una tablas
+pivote con el nombre en sigunlar de las dos tablas
+tabla1_tabla2
+
+
+En los modelos fillable indica los campos que pueden ser
+manejados para ese objeto, o pueden ser "publicos"
