@@ -16,7 +16,14 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->type }}</td>
             <td>{{ $user->email }}</td>
-            <td><a class="btn btn-danger" href="">Eliminar</a><a class="btn btn-warning">Modificar</a></td>
+            <td>
+                <form  action="{{ route('admin.users.destroy',$user->id) }}" method="POST" class="col s12">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" onclick="return confirm('¿Seguro que desea eliminar el usuario {{ $user->name }}?')" class="btn btn-danger">Eliminar</button>
+                </form>
+                <a class="btn btn-warning">Modificar</a>
+            </td>
         </tr>
    @endforeach
    </table>
