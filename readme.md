@@ -21,3 +21,6 @@ para hacer html con codigo
 
 #Otros
 Modelos en singular, controladores en plural
+
+#Para cambiar la carpeta publica en c9
+sudo nano /etc/apache2/sites-enabled/001-cloud9.conf
