@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'admin'],function(){
+
+    //nombre y el nombre del controlador
+    //Genera todas las rutas que tiene el controlador create, index, delete, update, etc.
+    Route::resource('users','UsersController');
+    
+});
