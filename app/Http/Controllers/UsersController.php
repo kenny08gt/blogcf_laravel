@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\User;
 
+//use Laracasts\Flash\Flash;
+
 class UsersController extends Controller
 {
     /**
@@ -47,7 +49,8 @@ class UsersController extends Controller
         $user->password=bcrypt($request->password);
         $user->save();
         
-        dd('Usuario creado :)');
+        flash('Se ha registrado de forma exitosa '.$user->name,'success');
+        return redirect()->route('admin.users.index');
     }
 
     /**

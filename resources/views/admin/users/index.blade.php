@@ -16,7 +16,7 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->type }}</td>
             <td>{{ $user->email }}</td>
-            <td><a class="btn btn-danger">Eliminar</a><a class="btn btn-warning">Modificar</a></td>
+            <td><a class="btn btn-danger" href="">Eliminar</a><a class="btn btn-warning">Modificar</a></td>
         </tr>
    @endforeach
    </table>

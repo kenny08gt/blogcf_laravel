@@ -14,6 +14,7 @@
               </div>
               <div class="panel-body">
                 <section>
+                    @include('flash::message')
                     @yield('content')
                 </section>
                 
