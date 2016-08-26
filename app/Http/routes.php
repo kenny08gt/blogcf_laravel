@@ -21,8 +21,6 @@ Route::group(['prefix'=>'admin'],function(){
     //Genera todas las rutas que tiene el controlador create, index, delete, update, etc.
     Route::resource('users','UsersController');
     
-    /*Route::get('users/{id}/destroy',[
-        'uses'=>'UsersController@destroy',
-        ''=>])*/
+    Route::resource('categories','CategoriesController');
     
 });

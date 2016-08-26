@@ -15,6 +15,7 @@
               <div class="panel-body">
                 <section>
                     @include('flash::message')
+                    @include('admin.template.partial.errors')
                     @yield('content')
                 </section>
                 

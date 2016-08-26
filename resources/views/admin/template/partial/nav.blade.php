@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="#">Inicio</a></li>
         <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
-        <li><a href="#">Categorias</a></li>
+        <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
