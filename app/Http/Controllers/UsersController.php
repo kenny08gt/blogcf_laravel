@@ -90,11 +90,11 @@ class UsersController extends Controller
         //
         $user=User::find($id);
         
-        $user->fill($request->all());
+        //$user->fill($request->all());
         
-        /*$user->name=$request->name;
+        $user->name=$request->name;
         $user->type=$request->type;
-        $user->email=$request->email;*/
+        $user->email=$request->email;
         
         $user->save();
      
