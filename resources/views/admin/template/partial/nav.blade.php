@@ -18,12 +18,14 @@
           <li><a href="/">Inicio</a></li>
           <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
           <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+          <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
+          <li><a href="#">Articulos</a></li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Buscar">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Buscar</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/">Pagina principal</a></li>
@@ -33,6 +35,11 @@
               <li><a href="{{ route('admin.auth.logout') }}">Salir</a></li>
             </ul>
           </li>
+        </ul>
+      @else
+        <ul class="nav navbar-nav">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="{{ route('admin.auth.login') }}">Login</a></li>
         </ul>
       @endif
     </div><!-- /.navbar-collapse -->

@@ -23,6 +23,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
     Route::resource('categories','CategoriesController');
     
+    Route::resource('tags','TagsController');
+    
 });
 
 Route::get('admin/auth/login', 
