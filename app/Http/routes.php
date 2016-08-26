@@ -25,6 +25,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
     Route::resource('tags','TagsController');
     
+    Route::resource('articles','ArticlesController');
+    
 });
 
 Route::get('admin/auth/login', 
