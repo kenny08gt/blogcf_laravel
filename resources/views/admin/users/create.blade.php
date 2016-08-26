@@ -7,6 +7,7 @@
    
 
     {!! Form::open(['route'=>'admin.users.store','method'=>'POST']) !!}
+        {{ csrf_field() }}
         <div class="form-group">
             {!! Form::label('name','Nombre') !!}
             {!! Form::text('name',null,['class'=>'form-control','required','placeholder'=>'Nombre completo']) !!}

@@ -4,6 +4,7 @@
 
 @section('content')
     {!! Form::open(['route'=>['admin.users.update',$user->id],'method'=>'PUT']) !!}
+    {{ csrf_field() }}
         <div class="form-group">
             {!! Form::label('name','Nombre') !!}
             {!! Form::text('name',$user->name,['class'=>'form-control','required','placeholder'=>'Nombre completo']) !!}

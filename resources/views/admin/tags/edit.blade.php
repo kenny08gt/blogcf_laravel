@@ -4,7 +4,7 @@
 
 @section('content')
     {!! Form::open(['route'=>['admin.tags.update',$tag->id],'method'=>'PUT']) !!}
-    
+    {{ csrf_field() }}
         <div class="form-group">
             {!! Form::label('name','Nombre') !!}
             {!! Form::text('name',$tag->name,['class'=>'form-control','placeholder'=>'Nombre tag']) !!}
