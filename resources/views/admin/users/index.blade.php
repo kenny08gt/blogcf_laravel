@@ -17,12 +17,13 @@
             <td>{{ $user->type }}</td>
             <td>{{ $user->email }}</td>
             <td>
-                <form  action="{{ route('admin.users.destroy',$user->id) }}" method="POST" class="col s12">
+                <form  action="{{ route('admin.users.destroy',$user->id) }}" method="POST" class="col s12" style="display:inline-block;">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button type="submit" onclick="return confirm('¿Seguro que desea eliminar el usuario {{ $user->name }}?')" class="btn btn-danger">Eliminar</button>
                 </form>
-                <a class="btn btn-warning">Modificar</a>
+                <a href="{{ route('admin.users.edit',$user->id) }}" class="btn btn-warning" style="display:inline-block;">Modificar</a>
+                
             </td>
         </tr>
    @endforeach
