@@ -3,7 +3,7 @@
 @section('title','Lista de articulos')
 
 @section('content')
-    <a class="btn btn-primary" href="{{ route('admin.articles.create') }}">Crear nueva tag</a>
+    <a class="btn btn-primary" href="{{ route('admin.articles.create') }}">Crear articulo</a>
     
     <table class="table table-striped">
         <thead>
@@ -16,7 +16,7 @@
                 <form  action="{{ route('admin.articles.destroy',$article->id) }}" method="POST" class="col s12" style="display:inline-block;">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" onclick="return confirm('¿Seguro que desea eliminar el articulo {{ $article->name }}?')" class="btn btn-danger">Eliminar</button>
+                    <button type="submit" onclick="return confirm('¿Seguro que desea eliminar el articulo {{ $article->title }}?')" class="btn btn-danger">Eliminar</button>
                 </form>
                 <a href="{{ route('admin.articles.edit',$article->id) }}" class="btn btn-warning" style="display:inline-block;">Modificar</a>
                 

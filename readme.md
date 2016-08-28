@@ -24,3 +24,13 @@ Modelos en singular, controladores en plural
 
 #Para cambiar la carpeta publica en c9
 sudo nano /etc/apache2/sites-enabled/001-cloud9.conf
+
+#Para jalar un id de un objeto guardando antes
+$article=new Article($request->all());
+$article->user_id=\Auth::user()->id;
+$article->save();
+        
+$image=new Image();
+$image->name=$name;
+$image->article()->associate($article);//para llenar la llave foranea de article_id
+$image->save();

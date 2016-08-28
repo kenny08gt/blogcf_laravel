@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Category;
 use App\Tag;
 use App\Article;
+use App\Image;
 class ArticlesController extends Controller
 {
     /**
@@ -47,19 +48,30 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         //manipulacion de imagenes
-        $file=$request->file('image');
-        $name='blogcd_'.time().'.'.$file->getClientOriginalExtension();
-        $path=public_path().'/images/articles/';
-        $file->move($path,$name);
-        
-        /*
+        //dd($request->tags);
+        if($request->file('image')){
+            $file=$request->file('image');
+            $name='blogcd_'.time().'.'.$file->getClientOriginalExtension();
+            $path=public_path().'/images/articles/';
+            $file->move($path,$name);    
+        }
+        //dd($request);
         $article=new Article($request->all());
+        $article->user_id=\Auth::user()->id;
         $article->save();
-        //dd($category);
-        flash('Article creado '.$article->name,'success');
+        
+        $article->tags()->sync($request->tags);
+        
+        if(isset($name)){
+        $image=new Image();
+        $image->name=$name;
+        $image->article()->associate($article);
+        $image->save();
+        }
+        
+        flash('Articulo creado exitosamente! '.$article->title,'success');
         
         return redirect()->route('admin.articles.index');
-        */
     }
 
     /**
