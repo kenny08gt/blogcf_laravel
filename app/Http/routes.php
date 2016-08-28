@@ -10,15 +10,21 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//RUTAS DEL FRONT END
+Route::resource('front','FrontController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+//RUTAS DEL PANEL DE ADMINISTRACION
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //nombre y el nombre del controlador
     //Genera todas las rutas que tiene el controlador create, index, delete, update, etc.
+    Route::get('/',['as'=>'admin.index', function(){
+        return view('admin.index');
+    }]);
+    
     Route::resource('users','UsersController');
     
     Route::resource('categories','CategoriesController');
