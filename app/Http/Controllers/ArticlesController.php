@@ -17,10 +17,14 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        $articles=Article::orderBy('id','DESC')->paginate(5);
+    public function index(Request $request)
+    {   //$tags=Tag::search($request->name)->orderBy('id','DESC')->paginate(5);
+        $articles=Article::search($request->title)->orderBy('id','DESC')->paginate(5);
+        $articles->each(function($articles){
+            $articles->Category;
+            $articles->User;
+        });
+        //dd($articles);
         return view('admin.articles.index')->with('articles',$articles);
     }
 
@@ -118,5 +122,12 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         //
+        $article=Article::find($id);
+        $article->delete();
+        flash('Se ha eliminado el articulo '.$article->title,'danger');
+        //eliminar imagenes
+        
+        
+        return redirect()->route('admin.articles.index');
     }
 }

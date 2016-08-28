@@ -14,8 +14,8 @@
             {!! Form::textarea('content',null,['class'=>'form-control textarea-trumbowyg ']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('categorie_id','Categoria') !!}
-            {!! Form::select('categorie_id',$categories,null,['class'=>'form-control select-category','required']) !!}
+            {!! Form::label('category_id','Categoria') !!}
+            {!! Form::select('category_id',$categories,null,['class'=>'form-control select-category','required']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('tags','Tag') !!}

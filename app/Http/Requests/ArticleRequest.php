@@ -26,7 +26,7 @@ class ArticleRequest extends Request
         return [
             //
             'title'=>'min:8|max:250|required|unique:articles',
-            'categorie_id'=>'required',
+            'category_id'=>'required',
             'content'=>'min:60|required',
             'tags'=>'required',
             'image'=>'required'

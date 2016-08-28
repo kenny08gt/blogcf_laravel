@@ -24,7 +24,7 @@ class Article extends Model
     //
     protected $table= "articles";
     //campos que pueden ser mostrados en un json
-    protected $fillable=["title","content","categorie_id","user_id"];
+    protected $fillable=["title","content","category_id","user_id"];
     
     public function Category(){
         return $this->belongsTo('App\Category');
@@ -38,5 +38,9 @@ class Article extends Model
     }
     public function tags(){
         return $this->belongsToMany('App\Tag');
+    }
+    
+    public function scopeSearch($query,$title){
+        return $query->where('title','LIKE',"%$title%");
     }
 }

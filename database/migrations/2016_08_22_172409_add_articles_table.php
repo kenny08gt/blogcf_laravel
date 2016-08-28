@@ -17,13 +17,13 @@ class AddArticlesTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->integer('user_id')->unsigned();;
-            $table->integer('categorie_id')->unsigned();;
+            $table->integer('category_id')->unsigned();;
             $table->timestamps();
             
             //llaves foraneas
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             
-            $table->foreign('categorie_id')->references('id')->on('categorys')->onDelete('cascade');;
+            $table->foreign('category_id')->references('id')->on('categorys')->onDelete('cascade');;
         });
     }
 
