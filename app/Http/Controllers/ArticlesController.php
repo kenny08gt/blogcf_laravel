@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\ArticleRequest;
 use App\Category;
 use App\Tag;
 use App\Article;
@@ -45,7 +46,7 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
         //manipulacion de imagenes
         //dd($request->tags);

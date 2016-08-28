@@ -9,9 +9,9 @@
             {!! Form::label('title','Titulo') !!}
             {!! Form::text('title',null,['class'=>'form-control','placeholder'=>'Titulo del articulo']) !!}
         </div>
-        <div class="form-group">
+        <div class="form-group ">
             {!! Form::label('content','Contenido') !!}
-            {!! Form::textarea('content',null,['class'=>'form-control','placeholder'=>'Cuerpo de articulo']) !!}
+            {!! Form::textarea('content',null,['class'=>'form-control textarea-trumbowyg ']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('categorie_id','Categoria') !!}
@@ -44,6 +44,8 @@
         placeholder_text_single: 'Elija una categoría',
         no_results_text:'No existe una categoria con ese nombre :('
     });
+    $(".textarea-trumbowyg").trumbowyg();
+
 </script>
 
 @endsection

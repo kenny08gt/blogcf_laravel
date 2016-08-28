@@ -5,6 +5,7 @@
         <title>@yield('title','Default') | Panel de administración</title>
         <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css', true) }}" />
         <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/dist/ui/trumbowyg.css') }}" type="text/css" />
     </head>
     <body>
         <div class="container">
@@ -25,6 +26,7 @@
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
             <script type="text/javascript" src="{{ asset('plugins/bootstrap/js/bootstrap.js' , true) }}"></script>
             <script type="text/javascript" src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('plugins/trumbowyg/dist/trumbowyg.js') }}"></script>
         </div>
         @yield('js')
     </body>
