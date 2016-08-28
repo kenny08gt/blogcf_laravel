@@ -99,6 +99,20 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         //
+        $article=Article::find($id);
+        $article->category;
+        $article->tags;
+        $article->images;
+        //dd($article);
+        
+        $Mytags=$article->tags->lists('id')->ToArray();
+        
+        $categories=Category::orderBy('name','DESC')->lists('name','id');
+        $tags=Tag::orderBy('name','DESC')->lists('name','id');
+        return view('admin.articles.edit')->with('categories',$categories)
+        ->with('tags',$tags)
+        ->with('Mytags',$Mytags)
+        ->with('article',$article);
     }
 
     /**
@@ -111,6 +125,16 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $article=Article::find($id);
+        $article->fill($request->all());
+        $article->save();
+        
+        $article->tags()->sync($request->tags);
+         flash('Se ha editado el articulo '.$article->title,'warning');
+        //eliminar imagenes
+        
+        
+        return redirect()->route('admin.articles.index');
     }
 
     /**
