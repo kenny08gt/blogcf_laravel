@@ -29,7 +29,7 @@ class ArticleRequest extends Request
             'category_id'=>'required',
             'content'=>'min:60|required',
             'tags'=>'required',
-            'image'=>'required'
+            'image'=>'image|required'
         ];
     }
 }

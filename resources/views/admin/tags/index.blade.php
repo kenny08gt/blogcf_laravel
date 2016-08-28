@@ -17,10 +17,13 @@
     <!-- Buscado tags-->
     <table class="table table-striped">
         <thead>
+            <th>Id</th>
             <th>Nombre</th>
+            <th>Operaciones</th>
         </thead>
    @foreach($tags as $tag)
        <tr>
+           <td>{{ $tag->id }}</td>
             <td>{{ $tag->name }}</td>
             <td>
                 <form  action="{{ route('admin.tags.destroy',$tag->id) }}" method="POST" class="col s12" style="display:inline-block;">

@@ -20,6 +20,7 @@
           <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
           <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
           <li><a href="{{ route('admin.articles.index') }}">Articulos</a></li>
+          <li><a href="{{ route('admin.images.index') }}">Imagenes</a></li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">

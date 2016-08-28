@@ -27,6 +27,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
     Route::resource('articles','ArticlesController');
     
+    Route::resource('images','ImagesController');
+    
 });
 
 Route::get('admin/auth/login', 

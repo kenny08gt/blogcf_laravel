@@ -56,7 +56,7 @@
           var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
           var image_holder = $("#image-holder");
           image_holder.empty();
-          if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+          
             if (typeof(FileReader) != "undefined") {
               //loop for each file selected for uploaded.
               for (var i = 0; i < countFiles; i++) 
@@ -76,9 +76,6 @@
             } else {
               alert("Este navegador no soporta vista previa de imagenes");
             }
-          } else {
-            alert("Por favor solo selecciones imagenes");
-          }
         });
       
 </script>

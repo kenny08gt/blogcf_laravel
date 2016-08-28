@@ -6,10 +6,12 @@
     <a class="btn btn-primary" href="{{ route('admin.categories.create') }}">Crear nueva categoria</a>
     <table class="table table-striped">
         <thead>
+            <th>Id</th>
             <th>Nombre</th>
+            <th>Operaciones</th>
         </thead>
    @foreach($categories as $category)
-       <tr>
+       <tr> <td>{{ $category->id }}</td>
             <td>{{ $category->name }}</td>
             <td>
                 <form  action="{{ route('admin.categories.destroy',$category->id) }}" method="POST" class="col s12" style="display:inline-block;">

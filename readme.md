@@ -34,3 +34,6 @@ $image=new Image();
 $image->name=$name;
 $image->article()->associate($article);//para llenar la llave foranea de article_id
 $image->save();
+
+#Para mandar una lista de algo al un select
+$tags->list('columna1','columna2');
