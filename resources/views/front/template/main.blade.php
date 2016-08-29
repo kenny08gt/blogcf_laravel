@@ -13,7 +13,7 @@
         @include('front.template.partial.nav')
        
         <!-- /#sidebar-wrapper -->
-
+        
         <!-- Page Content -->
         
         <div id="page-content-wrapper">

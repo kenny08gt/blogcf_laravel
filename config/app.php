@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
     ],
 
     /*

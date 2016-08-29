@@ -10,6 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/',['uses'=>'FrontController@index',
+    'as'=>'front.index']);
+
 //RUTAS DEL FRONT END
 Route::resource('front','FrontController');
 
@@ -17,7 +20,7 @@ Route::resource('front','FrontController');
 
 //RUTAS DEL PANEL DE ADMINISTRACION
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
 
     //nombre y el nombre del controlador
     //Genera todas las rutas que tiene el controlador create, index, delete, update, etc.

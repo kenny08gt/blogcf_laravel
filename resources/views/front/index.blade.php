@@ -1,10 +1,11 @@
 @extends('front.template.main')
 
 @section('title')
-    Home
+    Ultimos articulos
 @endsection
 
 @section('content')
+
     <div class="row">
       @foreach($articles as $article)
         <div class="col-md-4">
