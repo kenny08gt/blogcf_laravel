@@ -26,7 +26,7 @@ class Admin
         if($this->auth->user()->admin()){
             return $next($request);      
         }else{
-            return redirect()->route('front.index');
+            abort(401);
         }
     }
 }
